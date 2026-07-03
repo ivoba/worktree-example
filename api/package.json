@@ -1,0 +1,8 @@
+{
+  "name": "worktree-manager-api",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "docker-compose up php nginx; code=$?; if [ $code -eq 130 ] || [ $code -eq 143 ]; then exit 0; fi; exit $code"
+  }
+}

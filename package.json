@@ -1,0 +1,22 @@
+{
+  "name": "worktree-manager",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "frontend",
+    "api",
+    "mailpit",
+    "e2e"
+  ],
+  "scripts": {
+    "create": "node scripts/create-worktree.mjs",
+    "remove": "node scripts/remove-worktree.mjs",
+    "ports": "node scripts/worktree-ports.mjs",
+    "dev": "portless",
+    "dev:frontend": "npm run dev -w frontend",
+    "test:e2e": "npm run test -w e2e"
+  },
+  "devDependencies": {
+    "portless": "^0.15.0"
+  }
+}

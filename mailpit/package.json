@@ -1,0 +1,8 @@
+{
+  "name": "worktree-manager-mailpit",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "cd ../api && docker-compose up mailpit; code=$?; if [ $code -eq 130 ] || [ $code -eq 143 ]; then exit 0; fi; exit $code"
+  }
+}

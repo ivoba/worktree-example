@@ -1,0 +1,19 @@
+{
+  "apps": {
+    "frontend": {
+      "name": "worktree",
+      "appPort": 5173,
+      "script": "dev"
+    },
+    "api": {
+      "name": "api.worktree",
+      "appPort": 8080,
+      "script": "dev"
+    },
+    "mailpit": {
+      "name": "mailpit.worktree",
+      "appPort": 8026,
+      "script": "dev"
+    }
+  }
+}
