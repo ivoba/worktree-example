@@ -1,14 +1,23 @@
 # Git Worktree Manager Example
 
-A small example monorepo that demonstrates running multiple Git worktrees in parallel with unique local ports and HTTPS domains via [Portless](https://portless.sh). It addresses common problems in project setups with worktrees:
+An example project that demonstrates how to solve common git worktree problems in project setups.
+
+- NPM monorepo as project setup
+- NPM scripts as task runner
+- [Portless](https://portless.sh) for dynamic HTTPS domains and ports
+- Docker Compose to manage services
+- JS Script to map ports to worktree config
+
+A small example monorepo that demonstrates running multiple Git worktrees in parallel with unique local ports and HTTPS domains via [Portless](https://portless.sh). 
+
 
 ## Problems with worktree setup
 
-1. Gitignored files like `.env` are not automatically copied to a new worktree
-2. IDE-specific settings and local configs (phpunit, PHP Docker, open terminals, debug/run configs) are lost or out of sync
-3. Multiple Docker setups running in parallel cause port, container name, and volume conflicts
-4. Manual `/etc/hosts` and static `localhost` domains do not provide dynamic per-worktree URLs
-5. Directory structure and naming conventions differ across worktrees
+1. Gitignored files like `.env` are not automatically copied to a new worktree ✅
+2. IDE-specific settings and local configs (phpunit, PHP Docker, open terminals, debug/run configs) are lost or out of sync ❌ (Not solved yet for PHPStorm)
+3. Multiple Docker setups running in parallel cause port, container name, and volume conflicts ✅
+4. Manual `/etc/hosts` and static `localhost` domains do not provide dynamic per-worktree URLs ✅
+5. Directory structure and naming conventions differ across worktrees ✅
 
 
 ## Project Components 
@@ -18,7 +27,7 @@ A small example monorepo that demonstrates running multiple Git worktrees in par
 - **Frontend**: TypeScript + Vite
 - **E2E**: Playwright tests
 
-## Usage
+## Usage Main Worktree
 
 ```bash
 # Install dependencies
@@ -75,11 +84,10 @@ Terminates any running `npm run dev` processes in that worktree, asks for confir
 git branch -D <branch-name>
 ```
 
-
 ## Example Tools & Resources
-
-- [worktree (Rust crate)](https://crates.io/crates/worktree)
-- [AgenticSec/sprout](https://github.com/AgenticSec/sprout)
-- [coasts.dev](https://coasts.dev/)
-- [Working on multiple branches without losing my mind](https://fabiorehm.com/blog/2025/11/27/working-on-multiple-branches-without-losing-my-mind/)
-- [wraps-team/wraps setup-worktree.sh](https://github.com/wraps-team/wraps/blob/3f875647f7cf047d2b1106341b6368d7452e947c/scripts/setup-worktree.sh)
+- https://crates.io/crates/worktree
+- https://github.com/AgenticSec/sprout
+- https://coasts.dev/
+- https://fabiorehm.com/blog/2025/11/27/working-on-multiple-branches-without-losing-my-mind/
+- https://github.com/wraps-team/wraps/blob/3f875647f7cf047d2b1106341b6368d7452e947c/scripts/setup-worktree.sh
+- https://github.com/dazz/git-wt
