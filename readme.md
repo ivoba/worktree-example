@@ -8,9 +8,6 @@ An example project that demonstrates how to solve common git worktree problems i
 - Docker Compose to manage services
 - JS Script to map ports to worktree config
 
-A small example monorepo that demonstrates running multiple Git worktrees in parallel with unique local ports and HTTPS domains via [Portless](https://portless.sh). 
-
-
 ## Problems with worktree setup
 
 1. Gitignored files like `.env` are not automatically copied to a new worktree ✅
